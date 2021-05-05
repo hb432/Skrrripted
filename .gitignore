@@ -1,5 +1,1 @@
-active.temp
-refresh.temp
-node_modules
-package-lock.json
-skrrripted-win32-x64
+__pycache__
