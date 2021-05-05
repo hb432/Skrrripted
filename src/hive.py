@@ -7,6 +7,7 @@ from rlbot.utils.structures.bot_input_struct import PlayerInput
 from rlbot.utils.structures.game_data_struct import GameTickPacket
 from shutil import copyfile
 from typing import Dict
+
 import os
 
 def translate(tick, instructions, controller, physics):
@@ -112,11 +113,9 @@ class Hive(PythonHivemind):
    def get_outputs(self, packet: GameTickPacket) -> Dict[int, PlayerInput]:
       if packet.game_info.is_round_active:
          if session['mode'] == 0:
-            time = packet.game_info.game_time_remaining
-            if abs(time - floor(time)) < 0.001:
-               session['mode'] = 1
-               session['tick'] = 0
-               session['script'] = loads(open(script_file, 'r').read())
+            session['mode'] = 1
+            session['tick'] = 0
+            session['script'] = loads(open(script_file, 'r').read())
          else:
             edit = False
             state = GameState.create_from_gametickpacket(packet)
@@ -135,7 +134,7 @@ class Hive(PythonHivemind):
                      pass
             if edit:
                self.set_game_state(state)
-            session['tick'] = session['tick'] + 1
+            session['tick'] += 1
       else:
          if session['mode'] == 1:
             session['mode'] = 0
