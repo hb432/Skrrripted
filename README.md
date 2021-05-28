@@ -6,7 +6,7 @@ Skrrripted is a rocket league TAS tool. It allows you to apply frame-perfect inp
 
 **Before proceeding, ensure you have the RLBotGUI installed, downloadable from [https://rlbot.org/](https://rlbot.org)**
 
-Clone or download this repository, and copy its root folder to `AppData/Local/RLBotGUI/MyBots`. *Eventually, this bot should be directly available via the bot pack, but for now this is the recommneded method.*
+Clone or download this repository, and copy its root folder to `AppData/Local/RLBotGUI/MyBots`.
 
 # Getting Started
 
